@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+        /* CLASES = Son modelos a seguir
+            OBJETOS = Es una instancia de una clase */
+
+
+            /* Funcion Constructora N1 - tanto atributos como metodos tienen que colgar de 'this'
+            
+            function CriaturaAnimal (nombre, genero) {
+                // Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+                // Metodos 
+                this.sonido = function() {
+                    console.log('Hago un sonido porque soy un animal vivo :)');
+                }
+                this.saludo = function() {
+                    console.log(`Hola que tal me llamo ${this.nombre}`);
+                }
+            }
+
+            // Creacion de Instancias de la funcion constructora CriaturaAnimal
+            const july = new CriaturaAnimal("July", "Masculino");
+                    meme = new CriaturaAnimal("Meme", "Masculino");
+                        sara = new CriaturaAnimal("Sara", "Hembra");
+
+            console.log(july);
+            console.log(meme);
+            console.log(sara);
+            july.sonido();
+            july.saludo();
+            meme.sonido();
+            meme.saludo();
+            sara.sonido();
+            sara.saludo();
+
+            */
+
+            // Funcion Constructora donde asignamos los metodos al Prototipo y no la funcion como tal // Metodo Correcto mejora rendimineto y uso de memoria //
+            
+            function CriaturaAnimal (nombre, genero) {
+                // Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            // Metodos - Syntax ( Nombre de la funcion . prototype . nombre del metodo = function() {} )
+            CriaturaAnimal.prototype.sonido = function() {
+                    console.log('Hago un sonido porque soy un animal vivo :)');
+                }
+            
+            CriaturaAnimal.prototype.saludo = function() {
+                    console.log(`Hola que tal me llamo ${this.nombre}`);
+                }
+
+
+            // HERENCIA PROTO
+            function Gato(nombre, genero, tamano) {
+                this.super = CriaturaAnimal;
+                this.super(nombre, genero);
+                this.tamano = tamano;
+            }
+
+            // Gato esta heredando de CriaturaAnimal
+            Gato.prototype = new CriaturaAnimal();
+            Gato.prototype.constructor = Gato;
+
+            //SobreEscritura de Metodos del prototipo padre en el hijo
+            Gato.prototype.sonido = function () {
+                console.log('Soy un GATO y mi sonido es un Maullido');
+            }
+
+            Gato.prototype.maullar = function () {
+                console.log('Miau Miau');
+            }
+
+            // Creacion de Instancias de la funcion constructora CriaturaAnimal
+            const july = new CriaturaAnimal("July", "Masculino");
+                    meme = new CriaturaAnimal("Meme", "Masculino");
+                        sara = new Gato("Sara", "Hembra", "Gordo");
+
+            console.log(july);
+            console.log(meme);
+            console.log(sara);
+            july.sonido();
+            july.saludo();
+            meme.sonido();
+            meme.saludo();
+            sara.sonido();
+            sara.saludo();
+            sara.maullar();
+
+
+
+    </script>
+</body>
+</html>

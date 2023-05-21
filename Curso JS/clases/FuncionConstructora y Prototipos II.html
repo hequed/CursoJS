@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //FUNCION CONSTRUCTORA - Junto atributos como nombre, nivel, vida, mana cuelgan de 'this'
+        function CriaturaAmistosa(nombre, nivel, vida, mana) {
+            this.nombre = nombre;
+            this.nivel = nivel;
+            this.vida = vida;
+            this.mana = mana;
+        }
+        // Metodos sujetos al Prototipo
+        CriaturaAmistosa.prototype.saludo = function () {
+            console.log(`Hola mi nombre es ${this.nombre} tengo ${this.vida} de HP y ${this.mana} de MANA y mi Nivel Global es ${this.nivel}`);
+        }
+
+        // Instancia de Funcion Constructora
+        const guardia = new CriaturaAmistosa("Cruzado de Ventormenta", 80, 20000, 15000);
+
+        console.log(guardia);
+        guardia.saludo();
+
+
+    </script>
+
+
+
+</body>
+</html>

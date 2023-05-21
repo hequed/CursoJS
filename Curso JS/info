@@ -1,0 +1,31 @@
+[Ordenamiento del codigo]
+
+1. Importacion de modulos
+2. Declaracion de variables
+3. Declaracion de funciones
+4. Ejecucion de codigo
+
+
+/TIPOS DE DATOS EN JAVASCRIPT/
+
+[Primitivos]
+String      - cadenas de texto
+Number      - numericos
+Boolean     - verdaderos y falsos
+null        - representa una variable que no tiene valor pero que fue asignado intencionalmente por el programador el valor 'null'
+undefined   - representa una variable que no tiene valor asi lo asume javascript ya que es una variable que no se le asigno valor
+NaN         - Not a Number
+
+[Compuestos/Complejos]
+object = {}
+array  = []
+function = () {}
+class = {}
+etc
+
+/TIPS A RECORDAR/
+1. Utilizar let sobre var como buena practica / let = scope en bloque / var = scope global
+2. las variables const, no pueden estar vacias en valores primitivos, en cambio las variables let/var si pueden estar vacias
+3. Los Metodos son acciones que van a permitir ejecutar algo
+4. Las Propiedades son caracteristicas, atributos
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class CriaturaAmistosa {
+            constructor(nombre, nivel, vida, mana) {
+                // ATRIBUTOS   
+                this.nombre = nombre;
+                this.nivel = nivel;
+                this.vida = vida;
+                this.mana = mana;
+            }   
+        
+        // METODOS
+        saludar() {
+            console.log(`La criatura procede a saludar - Hola me llamo ${this.nombre}`);
+            }
+        }
+
+        // Instancia de Funcion Constructora
+        const guardia = new CriaturaAmistosa("Cruzado de Ventormenta", 80, 20000, 15000);
+        const boss = new CriaturaAmistosa("Varyan", 80, 100000, 50000);
+
+        console.log(guardia);
+        guardia.saludar();
+        
+        console.log(boss);
+        boss.saludar();
+
+        // HERENCIA - En este caso MascotaDeCriaturaAmistosa hereda gracias a 'extends' los atributos de la clase CriaturaAmistosa.
+        class MascotaDeCriaturaAmistosa extends CriaturaAmistosa {
+            constructor(nombre, nivel, vida, mana, talentos) {
+                // Con el metodo super se manda a llamar el constructor de la clase padre.
+                super(nombre, nivel, vida, mana);
+                this.talentos = talentos;
+            }
+        
+        saludar() {
+            console.log(`La mascota procede a saludar - Hola me llamo ${this.nombre}`);
+        }
+
+        atacar() {
+            console.log(`La mascota ${this.nombre} procede a atacar.`)
+        }
+
+        }
+
+        const cangrejo = new MascotaDeCriaturaAmistosa("Cangrejo Solitario", 20, 100, 50, "Sombras");
+
+        console.log(cangrejo);
+        cangrejo.saludar();
+        cangrejo.atacar();
+
+    </script>
+
+</body>
+</html>

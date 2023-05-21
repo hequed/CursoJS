@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+
+<body>
+    <h1>USO DE VAR Y LET</h1>
+    <script>
+
+        console.log("------------------utilizando_var-------------------------");
+        
+        var musica = "Rock";
+        console.log("Variable musica antes del bloque", musica);
+        
+        // esto es un bloque //
+        {
+            var musica = "Pop"
+            console.log("Variable musica dentro del bloque", musica);
+        }
+
+        console.log("Variable musica despues del bloque", musica);
+
+
+        console.log("------------------utilizando_let-------------------------");
+
+
+        let musica_2 = "Rock";
+        console.log("Variable musica antes del bloque", musica_2);
+
+        // esto es un bloque //
+        {
+            let musica_2 = "Pop"
+            console.log("Variable musica dentro del bloque", musica_2);
+        }
+
+        console.log("Variable musica despues del bloque", musica_2);
+        
+    </script>
+</body>
+</html>
+

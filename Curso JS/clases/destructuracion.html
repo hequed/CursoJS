@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //DESTRUCTURACION
+
+        const numeros = [1,2,3];
+
+        const [uno, dos, tres] = numeros
+        console.log(uno, dos, tres);
+
+        let persona = {
+            nombre: 'bastian',
+            apellido: 'diaz',
+            edad: 20
+        }
+                  
+        let { nombre, apellido, edad } = persona;
+        console.log(nombre, apellido, edad);
+
+
+
+
+    </script>
+</body>
+</html>
